@@ -11,12 +11,10 @@ const AddTask: React.FC = () => {
   const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState<Todos[]>([]);
 
-  console.log(todo);
   const addTodos = (e: React.FormEvent) => {
     e.preventDefault();
     setTodos([...todos, { id: Date.now(), todo, isCompleted: false }]);
   };
-  console.log(todos);
 
   return (
     <>
@@ -27,9 +25,12 @@ const AddTask: React.FC = () => {
             type="text"
             value={todo}
             onChange={(e) => setTodo(e.target.value)}
+            className="task_input"
           />
         </label>
-        <button onClick={addTodos}>Add task</button>
+        <button className="btn" onClick={addTodos}>
+          Add task
+        </button>
       </form>
       <TaskList todos={todos} />
     </>

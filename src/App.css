@@ -3,3 +3,14 @@
   margin: 0 auto;
   padding: 2rem;
 }
+
+.btn {
+  border: solid 1px #ccc;
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.task_input {
+  padding: 9px;
+  margin-left: 10px;
+}
