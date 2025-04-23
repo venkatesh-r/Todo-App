@@ -1,4 +1,6 @@
 import React from "react";
+import "./ListStyle.css";
+import TaskEdit from "./TaskEdit";
 
 interface Todos {
   id: number;
@@ -11,7 +13,9 @@ const TaskList: React.FC<Todos> = ({ todos }) => {
     <>
       <ul>
         {todos.map((val) => (
-          <li key={val.id}>{val.todo}</li>
+          <li className="list_style" key={val.id}>
+            <TaskEdit todos={val} id={val.id} isCompleted={val.isCompleted} />
+          </li>
         ))}
       </ul>
     </>
