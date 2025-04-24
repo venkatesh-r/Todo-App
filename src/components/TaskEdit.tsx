@@ -1,12 +1,19 @@
 import React from "react";
+import { Todo } from "../models/types";
 
-const TaskEdit = ({ todos, id, isCompleted }) => {
+interface Todos {
+  todos: Todo;
+  deleteTask: (id: number) => void;
+}
+
+const TaskEdit: React.FC<Todos> = ({ todos, deleteTask }) => {
+  console.log(todos);
   return (
     <>
-      <div>{todos}</div>
+      <div>{todos.todo}</div>
       <div>
-        <span onClick={}>completed</span>
-        <button>Edit</button>
+        {/*  <span onClick={}>completed</span> */}
+        <button onClick={() => deleteTask(todos.id)}>delete</button>
       </div>
     </>
   );
